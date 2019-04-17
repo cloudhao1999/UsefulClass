@@ -64,6 +64,15 @@ public class theRegexTest {
         System.out.println();
     }
     
+    public static void textReplace(String text, String word, String repalceWord) {
+        // 文本替换：将字符串中所有的”pupel”替换为”pupil”。
+        Pattern p4 = Pattern.compile(word);
+        Matcher m4 = p4.matcher(text);
+        String replace = new String();
+        replace = m4.replaceAll(repalceWord);
+        System.out.println("替换前 : " + text);
+        System.out.println("替换后 : " + replace);
+    }
     public static void main(String[] args) {
     	binPhoneFormat("(1350)6500-1140");
         binPhoneFormat("1234-56789-1011");
@@ -75,5 +84,6 @@ public class theRegexTest {
         endWithAbc("ababc");
         endWithAbc("abcabcd");
         IntegerToArray("ae256dd-w348e6");
+        textReplace("pupel I love you", "pupel", "pig");
     }
 }
