@@ -73,6 +73,16 @@ public class theRegexTest {
         System.out.println("替换前 : " + text);
         System.out.println("替换后 : " + replace);
     }
+    public static void Cxll(String str) {
+        // 从一个字符串中提取以%cxll=开头，右部是%的字符串（不包含%）。
+        Pattern p5 = Pattern.compile("%CXLL=.*?(?=%)"); // 右部必须有一个%,最小匹配
+        Matcher m5 = p5.matcher(str);
+
+        System.out.println("提取后 : ");
+        while (m5.find()) {
+            System.out.println(m5.group());
+        }
+    }
     public static void main(String[] args) {
     	binPhoneFormat("(1350)6500-1140");
         binPhoneFormat("1234-56789-1011");
@@ -85,5 +95,7 @@ public class theRegexTest {
         endWithAbc("abcabcd");
         IntegerToArray("ae256dd-w348e6");
         textReplace("pupel I love you", "pupel", "pig");
+        String cxll = "%...%CXLL=0001,01,103,123%CXLL=hhh2,31,114%CXLL=7127.33.1%LL=-o21.11";
+        Cxll(cxll);
     }
 }

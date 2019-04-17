@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 
 public class StringOperator {
 
-    public static int LetterTime(String str, char letter) {
+    public static int countLetters(String str, char letter) {
         // 统计字母出现次数
         int appearNum = 0;
 
@@ -18,9 +18,8 @@ public class StringOperator {
     }
 
     public static void toUpper(String str) {
-        // 正则表达式将单词首字母转换为大写
         String word = null;
-        StringBuilder sb = new StringBuilder();
+        StringBuilder strB = new StringBuilder();
 
         Pattern pattern = Pattern.compile("([a-z])([a-z]*)");
         Matcher matcher = pattern.matcher(str);
@@ -28,9 +27,9 @@ public class StringOperator {
         while (matcher.find()) {
             word = matcher.group();
             word = word.substring(0, 1).toUpperCase() + word.substring(1);
-            sb.append(word).append(" ");
+            strB.append(word).append(" ");
         }
-        System.out.println("字符串转换为首字母大写 : " + sb.toString());
+        System.out.println("首字母大写 : " + strB.toString());
     }
 
     public static void reverseString(String str) {
@@ -60,21 +59,19 @@ public class StringOperator {
 
     public static void main(String[] args) {
 
-        String Str = new String("this is a test of java");
-        char letter = 's';
+        String str = new String("this is a test of java");
+        char letter = 'a';
 
-        System.out.println("字符串s出现的次数 : " + LetterTime(Str, letter));
-        System.out.println("取出子字符串Test : " + Str.substring(10, 14));
-
-        char[] str = Str.toCharArray();
-        System.out.print("将本字符串复制到字符数组 : ");
-        for (int i = 0; i < str.length; i++) {
-            System.out.print(str[i]);
+        System.out.println("a出现的次数 : " + countLetters(str, letter));
+        char[] str1 = str.toCharArray();
+        System.out.print("本字符串复制到字符数组 : ");
+        for (int i = 0; i < str1.length; i++) {
+            System.out.print(str1[i]);
         }
         System.out.println();
-        toUpper(Str);
-        reverseString(Str);
-        stringToWord(Str);
+        toUpper(str);
+        reverseString(str);
+        stringToWord(str);
 
     }
 }
