@@ -34,6 +34,18 @@ public class theRegexTest {
         System.out.println("压缩后 : " + reptStr);
     }
 
+    public static void endWithAbc(String str) {
+        // 判断字符串是否以abc结尾
+        Pattern p2 = Pattern.compile("(.)*(abc$)");
+        Matcher m2 = p2.matcher(str);
+        boolean check = m2.matches();
+
+        if (check == true)
+            System.out.println(str + "以abc结尾");
+        else
+            System.out.println(str + "不以abc结尾");
+    }
+    
     public static void main(String[] args) {
     	binPhoneFormat("(1350)6500-1140");
         binPhoneFormat("1234-56789-1011");
@@ -42,5 +54,7 @@ public class theRegexTest {
         
         RepeatLetter("aaabbcccddd1123.");
 
+        endWithAbc("ababc");
+        endWithAbc("abcabcd");
     }
 }
