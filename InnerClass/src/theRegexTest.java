@@ -27,7 +27,12 @@ public class theRegexTest {
         }
     }
 
-    
+    public static void RepeatLetter(String str) {
+        // 压缩连续出现的字符成一个
+        String reptStr = str.replaceAll("(.)(\\1)*", "$1");
+
+        System.out.println("压缩后 : " + reptStr);
+    }
 
     public static void main(String[] args) {
     	binPhoneFormat("(1350)6500-1140");
@@ -35,5 +40,7 @@ public class theRegexTest {
 
         printIpAddress("Ip1 : 192.118.1.1, Ip2 : 1.10.10.100, WrongIp : 210.100.14.250");
         
+        RepeatLetter("aaabbcccddd1123.");
+
     }
 }
