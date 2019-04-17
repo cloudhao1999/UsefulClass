@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 public class StringOperator {
 
     public static int countLetters(String str, char letter) {
-        // 统计字母出现次数
+        // 统计字母出现的次数
         int appearNum = 0;
 
         for (int i = 0; i < str.length(); i++) {
