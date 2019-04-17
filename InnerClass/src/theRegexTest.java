@@ -16,9 +16,24 @@ public class theRegexTest {
 
 
     }
+    public static void printIpAddress(String str) {
+        Pattern p = Pattern.compile("(?=(\\b|\\D))(((\\d{1,2})|(1\\d{1,2})|(2[0-4]\\d)|(25[0-5]))\\.){3}((\\d{1,2})|" +
+                "(1\\d{1,2})|(2[0-4]\\d)|(25[0-5]))(?=(\\b|\\D))");
+        Matcher m = p.matcher(str);
+
+        System.out.println("所有ip地址 : ");
+        while (m.find()) {
+            System.out.println(m.group());
+        }
+    }
+
+    
 
     public static void main(String[] args) {
-        binPhoneFormat("(1350)6500-1140");
+    	binPhoneFormat("(1350)6500-1140");
         binPhoneFormat("1234-56789-1011");
+
+        printIpAddress("Ip1 : 192.118.1.1, Ip2 : 1.10.10.100, WrongIp : 210.100.14.250");
+        
     }
 }
