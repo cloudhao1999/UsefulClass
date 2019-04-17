@@ -45,6 +45,24 @@ public class theRegexTest {
         else
             System.out.println(str + "不以abc结尾");
     }
+    //将一个字符串中的所有整数提取出来，保存在一维数组中。比如”ae256dd—w348e6”，提取出256,348,6三个整数
+    public static void IntegerToArray(String str) {
+        Pattern p3 = Pattern.compile("(\\d)+");
+        Matcher m3 = p3.matcher(str);
+
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        Integer Num = new Integer(0);
+
+        while (m3.find()) {
+        	Num = Integer.valueOf(m3.group());
+            ((ArrayList) list).add(Num);
+        }
+
+        for (Integer i : list) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+    }
     
     public static void main(String[] args) {
     	binPhoneFormat("(1350)6500-1140");
@@ -56,5 +74,6 @@ public class theRegexTest {
 
         endWithAbc("ababc");
         endWithAbc("abcabcd");
+        IntegerToArray("ae256dd-w348e6");
     }
 }
