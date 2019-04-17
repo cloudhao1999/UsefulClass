@@ -5,8 +5,8 @@ import java.util.regex.Pattern;
 
 public class StringOperator {
 
-    public static int statLetterTime(String str, char letter) {
-        // 统计字母出现的次数
+    public static int LetterTime(String str, char letter) {
+        // 统计字母出现次数
         int appearNum = 0;
 
         for (int i = 0; i < str.length(); i++) {
@@ -17,8 +17,8 @@ public class StringOperator {
         return appearNum;
     }
 
-    public static void regexToUpper(String str) {
-        // 利用正则表达式将字符串每个单词首字母转换为大写
+    public static void toUpper(String str) {
+        // 正则表达式将单词首字母转换为大写
         String word = null;
         StringBuilder sb = new StringBuilder();
 
@@ -34,7 +34,7 @@ public class StringOperator {
     }
 
     public static void reverseString(String str) {
-        // 使用for循环逆序输出字符串
+       
         System.out.print("For循环逆序输出字符串 : ");
         for (int i = str.length() - 1; i >= 0; i--) {
             System.out.print(str.charAt(i));
@@ -46,8 +46,8 @@ public class StringOperator {
         System.out.println("StringBuilder逆序输出字符串 : " + sb.reverse());
     }
 
-    public static void stringToWordArray(String str) {
-        // 将字符串转换为字符串数组，每个元素都是单词tring
+    public static void stringToWord(String str) {
+        
         String[] wordStrArr = str.split(" ");
 
         // 输出字符串数组
@@ -60,22 +60,21 @@ public class StringOperator {
 
     public static void main(String[] args) {
 
-        String mainStr = new String("this is a test of java");
+        String Str = new String("this is a test of java");
         char letter = 's';
 
-        System.out.println("字母s出现的次数 : " + statLetterTime(mainStr, letter));
-        System.out.println("取出子串Test : " + mainStr.substring(10, 14));
+        System.out.println("字符串s出现的次数 : " + LetterTime(Str, letter));
+        System.out.println("取出子字符串Test : " + Str.substring(10, 14));
 
-        char[] newStr = mainStr.toCharArray();
-        System.out.print("复制字符串到字符数组 : ");
-        for (int i = 0; i < newStr.length; i++) {
-            System.out.print(newStr[i]);
+        char[] str = Str.toCharArray();
+        System.out.print("将本字符串复制到字符数组 : ");
+        for (int i = 0; i < str.length; i++) {
+            System.out.print(str[i]);
         }
         System.out.println();
-
-        regexToUpper(mainStr);
-        reverseString(mainStr);
-        stringToWordArray(mainStr);
+        toUpper(Str);
+        reverseString(Str);
+        stringToWord(Str);
 
     }
 }
