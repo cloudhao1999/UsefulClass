@@ -5,7 +5,7 @@ public class StringToSub {
         strbb1.append(str);
 
         System.out.println("String StringBuffer相互转换 : ");
-        System.out.println("添加 : " + strbb1);
+        System.out.println(" 添加 : " + strbb1);
         System.out.println();
 
         
